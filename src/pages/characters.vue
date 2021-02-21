@@ -94,7 +94,7 @@ const Component = defineComponent({
       return [];
     });
     const handleSingleCharacter = (id: number) => {
-      router.push({ name: "character", params: { id } });
+      router.push({ name: "vue3-app/character", params: { id } });
     };
 
     const scrollListener = () => {

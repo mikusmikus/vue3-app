@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="navbar">
-      <router-link class="link" to="/">Home</router-link>
-      <router-link class="link" to="/characters">Characters</router-link>
-      <router-link class="link" to="/todo">Todo</router-link>
-      <router-link class="link" to="/about">About</router-link>
-      <router-link class="link" to="/contacts">Contacts</router-link>
+      <router-link class="link" to="/vue3-app/">Home</router-link>
+      <router-link class="link" to="/vue3-app/characters">Characters</router-link>
+      <router-link class="link" to="/vue3-app/todo">Todo</router-link>
+      <router-link class="link" to="/vue3-app/about">About</router-link>
+      <router-link class="link" to="/vue3-app/contacts">Contacts</router-link>
     </div>
     <div class="options">
       <div class="themes">

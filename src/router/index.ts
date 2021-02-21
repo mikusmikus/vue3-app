@@ -8,32 +8,32 @@ import contacts from "../pages/contacts.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/vue3-app/",
     name: "home",
     component: home,
   },
   {
-    path: "/characters",
+    path: "/vue3-app/characters",
     name: "characters",
     component: characters,
   },
   {
-    path: "/about",
+    path: "/vue3-app/about",
     name: "about",
     component: about,
   },
   {
-    path: "/todo",
+    path: "/vue3-app/todo",
     name: "todo",
     component: todo,
   },
   {
-    path: "/contacts",
+    path: "/vue3-app/contacts",
     name: "contacts",
     component: contacts,
   },
   {
-    path: "/character:id",
+    path: "/vue3-app/character:id",
     name: "character",
     component: character,
   },
