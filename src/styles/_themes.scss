@@ -1,0 +1,30 @@
+// šādi var sataisīt themes un tad toglojot klasi iekš html, automātiski mainīsies.
+// un tad attiecīgi, visur kur saistība ar krāsām, tad izmanto nevis color vai background-color, bet gan 
+// @includes theme-aware($key, $color)
+
+$themes: (
+  light: (
+    color-background: #f8f9fa,
+    color-primary-light: #f8f9fa,
+    color-primary-dark: #212529,
+    color-secondary-light: #e9ecef,
+    color-secondary-dark: #343a40,
+    color-headingBg: #dee2e6,
+    color-warning: #f77f00,
+    color-danger: #f4acb7,
+    color-light: #e9ecef,
+    color-dark: #343a40,
+  ),
+  dark: (
+    color-background: #6c757d,
+    color-primary-dark: #f8f9fa,
+    color-primary-light: #212529,
+    color-secondary-dark: #e9ecef,
+    color-secondary-light: #343a40,
+    color-headingBg: #2c3033,
+    color-warning: #352b20,
+    color-danger: #552a33,
+    color-light: #e9ecef,
+    color-dark: #343a40,
+  ),
+);

@@ -1,0 +1,39 @@
+@mixin theme-aware($key, $color) {
+  @each $theme-name, $theme-color in $themes {
+    .#{$theme-name} & {
+      #{$key}: map-get(map-get($themes, $theme-name), $color);
+    }
+  }
+}
+
+$font-sizes: (
+  "small": 1rem,
+  "medium": 2rem,
+  "large": 3rem,
+);
+
+@mixin button-size($size: "medium") {
+  font-size: map-get($font-sizes, $size);
+  padding: 0.5em 1em;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@mixin flex($direction : row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hover-lift($time: 0.2) {
+  transition: all #{$time}s;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  }
+}

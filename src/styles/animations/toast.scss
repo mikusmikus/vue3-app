@@ -1,0 +1,51 @@
+/* toast animations*/
+/* do not need to use enter-to or leave-from because default settings */
+.toast-enter-from {
+  opacity: 0;
+  transform: translate(-50%, -60px);
+}
+// .toast-enter-to {
+//   opacity: 1;
+//   transform: translate(-50%, 0);
+// }
+.toast-enter-active {
+  animation: wobble 0.5s ease;
+  // transition: all 0.5s ease-in;
+}
+// .toast-leave-from {
+//   opacity: 1;
+//   transform: translate(-50%, 0);
+// }
+.toast-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -60px);
+}
+.toast-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+@keyframes wobble {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  60% {
+    transform: translateX(-48%);
+  }
+  70% {
+    transform: translateX(-51%);
+  }
+  80% {
+    transform: translateX(-49%);
+  }
+  90% {
+    transform: translateX(-51%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
