@@ -33,7 +33,7 @@ const routes = [
     component: contacts,
   },
   {
-    path: "/vue3-app/character:id",
+    path: "/vue3-app/character:paramsId",
     name: "character",
     component: character,
   },

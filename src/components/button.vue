@@ -1,5 +1,7 @@
 <template>
-  <button :type="type" :class="class1">{{ label }}</button>
+  <button :type="type" :class="class1">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts">
@@ -7,10 +9,6 @@ import { defineComponent } from "vue";
 
 const Component = defineComponent({
   props: {
-    label: {
-      type: String,
-      required: true,
-    },
     type: {
       type: String,
       default: "button",
@@ -27,8 +25,8 @@ export default Component;
 <style lang="scss" scoped>
 @import "../styles/index.scss";
 .add__buttom {
-  @include theme-aware('background-color', 'color-danger');
-  @include theme-aware('color', 'color-secondary-dark');
+  @include theme-aware("background-color", "color-danger");
+  @include theme-aware("color", "color-secondary-dark");
   position: absolute;
   height: 100%;
   right: 0;
@@ -45,8 +43,8 @@ export default Component;
 }
 
 .showButton {
-  @include theme-aware('background-color', 'color-secondary-light');
-  @include theme-aware('color', 'color-secondary-dark');
+  @include theme-aware("background-color", "color-secondary-light");
+  @include theme-aware("color", "color-secondary-dark");
   outline: none;
   border: none;
   margin: 0.2em;
@@ -58,8 +56,8 @@ export default Component;
     opacity: 0.8;
   }
   &.active {
-    @include theme-aware('background-color', 'color-warning');
-    @include theme-aware('color', 'color-secondary-dark');
+    @include theme-aware("background-color", "color-warning");
+    @include theme-aware("color", "color-secondary-dark");
   }
 }
 </style>

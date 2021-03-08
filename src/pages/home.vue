@@ -2,30 +2,68 @@
   <div class="home">
     <section>
       <div class="container">
-        <div class="row center-xs">
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quia.
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo alias illo eum voluptatem
-            et est? Mollitia reprehenderit quidem dignissimos assumenda soluta, explicabo cumque,
-            nobis ipsum pariatur enim, magnam odit veniam et alias nostrum fugiat ea officia
-            possimus ipsa est. Dolorem fuga dolores eum illo, sapiente dicta vel assumenda quia
-            natus facilis ratione laboriosam! Suscipit delectus veritatis labore fugit nesciunt sed
-            omnis reprehenderit eius ipsum dignissimos ab laudantium eveniet culpa corporis aperiam
-            laborum, ratione error asperiores porro temporibus qui perferendis? Perspiciatis
-            consectetur, eos eum molestiae expedita aliquid. Ad tenetur incidunt explicabo sapiente
-            quidem modi dolore voluptas impedit quas dolor cum dicta aut doloribus alias provident
-            nisi iure eum enim deleniti, perspiciatis consequuntur quasi, accusamus recusandae
-            mollitia. Iure, excepturi! Dolore ducimus atque cumque aliquam? Libero saepe
-            necessitatibus ducimus eius repudiandae reprehenderit blanditiis amet tempora pariatur
-            quia. Sapiente vero nulla dicta reprehenderit ratione! Rem alias quidem architecto
-            soluta ipsa cumque commodi, quisquam adipisci inventore ullam quia aspernatur a. Itaque
-            omnis dolores voluptatibus illo unde fugit debitis beatae nam alias accusantium tempora
-            incidunt excepturi dolore, in enim? Esse voluptas ullam debitis architecto iste
-            necessitatibus nam a omnis reprehenderit. A tempore voluptas sapiente maxime quae minus
-            quaerat delectus voluptatibus placeat praesentium repellat eius, necessitatibus tempora!
-          </p>
+        <div class="hero">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quia.
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo alias illo eum
+                voluptatem et est? Mollitia reprehenderit quidem dignissimos assumenda soluta,
+                explicabo cumque, nobis ipsum pariatur enim, magnam odit veniam et alias nostrum
+                fugiat ea officia possimus ipsa est. Dolorem fuga dolores eum illo, sapiente dicta
+                vel assumenda quia natus facilis ratione laboriosam! Suscipit delectus veritatis
+                labore fugit nesciunt sed omnis reprehenderit eius ipsum dignissimos ab laudantium
+                eveniet culpa corporis aperiam laborum, ratione error asperiores porro temporibus
+                qui perferendis? Perspiciatis consectetur, eos eum molestiae expedita aliquid. Ad
+                tenetur incidunt explicabo sapiente quidem modi dolore voluptas impedit quas dolor
+                cum dicta aut doloribus alias provident nisi iure eum enim deleniti, perspiciatis
+                consequuntur quasi, accusamus recusandae mollitia. Iure, excepturi! Dolore ducimus
+                atque cumque aliquam? Libero saepe necessitatibus ducimus eius repudiandae
+                reprehenderit blanditiis amet tempora pariatur quia. Sapiente vero nulla dicta
+                reprehenderit ratione! Rem alias quidem architecto soluta ipsa cumque commodi,
+                quisquam adipisci inventore ullam quia aspernatur a. Itaque omnis dolores
+                voluptatibus illo unde fugit debitis beatae nam alias accusantium tempora incidunt
+                excepturi dolore, in enim? Esse voluptas ullam debitis architecto iste
+                necessitatibus nam a omnis reprehenderit. A tempore voluptas sapiente maxime quae
+                minus quaerat delectus voluptatibus placeat praesentium repellat eius,
+                necessitatibus tempora!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="about">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>Lorem ipsum dolor.</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla est velit rem
+                expedita necessitatibus sequi sed, architecto distinctio molestiae optio atque
+                laudantium, ea quo dolorem!
+              </p>
+              <VButton class='large'> Read More</VButton>
+            </div>
+            <div class="col-xs-6">
+              <VImage src="https://picsum.photos/700/400" alt="img1" :aspectRatio="60" />
+            </div>
+          </div>
+        </div>
+        <div class="about">
+          <div class="row">
+            <div class="col-xs-6">
+              <VImage src="https://picsum.photos/800/400" alt="img1" />
+            </div>
+            <div class="col-xs-6">
+              <h2>Lorem ipsum dolor.</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla est velit rem
+                expedita necessitatibus sequi sed, architecto distinctio molestiae optio atque
+                laudantium, ea quo dolorem!
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -69,43 +107,20 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import gsap from "gsap";
+import images from "../data/home-images";
+import VImage from "../components/image.vue";
+import VButton from "../components/button.vue";
 
-const images = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur111.",
-    image: "https://picsum.photos/id/237/800/800",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur222.",
-    image: "https://picsum.photos/id/27/800/800",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur333.",
-    image: "https://picsum.photos/id/7/800/300",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur444.",
-    image: "https://picsum.photos/id/233/800/800",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur555.",
-    image: "https://picsum.photos/id/137/300/800",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur666.",
-    image: "https://picsum.photos/id/24/800/300",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur777.",
-    image: "https://picsum.photos/id/17/800/300",
-  },
-];
 interface Image {
   text: string;
   image: string;
 }
 
 const Component = defineComponent({
+  components: {
+    VImage,
+    VButton,
+  },
   name: "Home",
   setup() {
     // const showImages = ref(false);
@@ -188,6 +203,19 @@ export default Component;
 section {
   margin-bottom: 100px;
 }
+.hero {
+  margin-bottom: 3rem;
+}
+.about {
+  h2,
+  p {
+    @include theme-aware("color", "color-light");
+  }
+  @include theme-aware("background-color", "color-dark");
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .advert {
   @include theme-aware("background-color", "color-danger");
   width: 100%;
@@ -227,7 +255,7 @@ div[class^="image-wrapper"] {
     filter: grayscale(60%);
   }
   &:hover .text {
-    transition: all 0.5s;
+    transition: opacity 0.8s, transform 0.3s;
     transform: translateX(0);
     opacity: 1;
   }
@@ -270,7 +298,7 @@ div[class^="image-wrapper"] {
   background-color: rgba($color: $color-danger, $alpha: 0.8);
   padding: 0.3em 0.7em;
   font-size: 1.5rem;
-  transform: translateX(-50px);
+  transform: translateX(-100px);
   opacity: 0;
 }
 </style>

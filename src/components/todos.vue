@@ -3,16 +3,16 @@
     <div class="col-xs-6">
       <form action="" @submit.prevent="addNote()" class="form">
         <Input v-model:inputValue="searchText" placeholder="add note here" ref="inputRef" />
-        <Button class="add__buttom" label="Add" type="submit" />
+        <VButton class="add__buttom" type="submit">Add</VButton>
       </form>
-      <Button
+      <VButton
         v-for="name in buttonNames"
         :key="name"
         class="showButton mb-1"
         v-bind:class="{ active: whatToShow === name }"
-        :label="name"
         @click="notesToShow(name)"
-      />
+        >name</VButton
+      >
       <transition name="switch" mode="out-in">
         <div v-if="toDoListNotes.length">
           <transition-group tag="ul" name="list" appear>
@@ -21,7 +21,7 @@
                 {{ item.name }}
               </label>
               <input type="checkbox" v-bind:id="item.id" v-model="item.checked" :value="item" />
-              <Button class="add__buttom" label="delete" @click="deleteItem(item.id)" />
+              <VButton class="add__buttom" @click="deleteItem(item.id)">delete</VButton>
             </li>
           </transition-group>
         </div>
@@ -32,7 +32,7 @@
 </template>
 <script lang="ts">
 import { computed, defineComponent, ref } from "vue";
-import Button from "./button.vue";
+import VButton from "./button.vue";
 import Input from "./input.vue";
 
 type Datalist = {
@@ -48,7 +48,7 @@ const listItems: Datalist[] = [
 
 const Component = defineComponent({
   components: {
-    Button,
+    VButton,
     Input,
   },
   setup(props, { emit }) {
@@ -111,7 +111,7 @@ export default Component;
   border-radius: 8px;
   overflow: hidden;
 }
-.mb-1{
+.mb-1 {
   margin-bottom: 2rem;
 }
 ul {

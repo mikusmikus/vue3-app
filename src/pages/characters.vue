@@ -31,9 +31,7 @@
                 :data-index="index"
               >
                 <div class="character">
-                  <div class="image-wrapper">
-                    <img class="image" :src="character.image" :alt="character.name" />
-                  </div>
+                  <VImage :src="character.image" :alt="character.name" :aspectRatio="100" />
                   <div class="content">
                     <h3>{{ character.name }}</h3>
                   </div>
@@ -52,12 +50,13 @@
 
 <script lang="ts">
 import {
-  defineComponent, ref, computed, watchEffect, onMounted,
+  defineComponent, ref, computed, onMounted,
 } from "vue";
 import axios from "axios";
 import gsap from "gsap";
 // eslint-disable-next-line import/no-cycle
 import router from "@/router";
+import VImage from "../components/image.vue";
 
 export type Character = {
   id: number;
@@ -66,6 +65,9 @@ export type Character = {
 };
 
 const Component = defineComponent({
+  components: {
+    VImage,
+  },
   setup() {
     // stopPropagation();
     // this.onclick=null to works only once
@@ -94,7 +96,7 @@ const Component = defineComponent({
       return [];
     });
     const handleSingleCharacter = (id: number) => {
-      router.push({ name: "vue3-app/character", params: { id } });
+      router.push({ name: "character", params: { paramsId: id } });
     };
 
     const scrollListener = () => {
@@ -214,17 +216,6 @@ button {
   .content {
     @include flex(column);
     flex-grow: 1;
-  }
-  .image-wrapper {
-    width: 100%;
-    position: relative;
-    padding-top: 100%;
-  }
-  .image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
   }
   button {
     @include button-size("small");
